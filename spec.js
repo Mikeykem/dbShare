@@ -143,7 +143,7 @@ describe('Signing up', function() {
 		element(by.id('submit')).click();
 		expect($('[data-ng-show="error"]').isDisplayed()).toBeFalsy();
 	});
-});
+});*/
 
 describe('View gatorDB', function() {
 	it ('should be able to see the database for gatorDB', function() {
@@ -152,7 +152,7 @@ describe('View gatorDB', function() {
 		element(by.id('gatorDB')).click();
 		expect($('[data-ng-show="error"]').isDisplayed()).toBeFalsy();
 	});
-});*/
+});
 
 
 ////////////////////////////////////////////////////////////////
@@ -168,41 +168,19 @@ describe('Creating a new comment', function() {
 	});
 });
 
-describe('Creating a new comment', function() {
-	var comment = generateUUID();
-	it ('should be able to add a comment to the db', function() {
-		element(by.id('newCommentTab')).click();
-		element(by.id('reviews')).sendKeys( comment );
-		element(by.id('commentSubmit')).click();
-
-		element(by.id('commentTab')).click();
-
-		//var comment2 = element.all(by.binding('comment.reviews'));
-		//expect(comment).toEqual(comment2);
-	});
-});
-
-
-
-
 //
-describe('Creating a new codeSnippet', function() {
- 	it ('should be able to add a codeSnippet to the db', function() {
- 		browser.get('http://localhost:3000/#!/databases/5536d95f7d34610000f83d65');
- 		browser.sleep(40000);
- 		var tabs=element.all(by.css("ul.nav.nav-pills"));
- 		tabs.get(3).click();
- 		var modeSelect= element(by.model('mode'));
- 		modeSelect.click();
- 		element(by.options("m for m in modes")).get(1).click();
- 		element(by.model('cmModel')).sendKeys('*This is a comment \n /*So is this*/ \n //And this \n "A string" \n `A macro\' \n return a keyword \n _by() a builtin' );
- 		element(by.id('codeSnippetSubmit')).click();
- 		element.all(by.css("ul.nav.nav-pills")).get(2).click();
- 		expect(element.all(by.css(".cm-s-monokai span.cm-comment")).get(0).getText().toEqual('*This is a comment'));
+//	it ('should be able to add a codeSnippet to the db', function() {
+// 		element(by.id('newCodeSnippet')).click();
+// 		element(by.id('csComment')).sendKeys('Kenan was right!');
+// 		browser.sleep(3000);
+//		element(by.id('codeEntry')).sendKeys( '*This is a comment \n /*So is this*/ \n //And this \n "A string" \n `A macro\' \n return a keyword \n _by() a builtin' )
+// 		element.all(by.options("m for m in modes")).get(1).click();
+// 		element(by.id('codeSnippetSubmit')).click();
+// 		expect($('[data-ng-show="error"]').isDisplayed()).toBeFalsy();
+ 	
 
- 	});
-});
-
+ //	});
+//});
 //describe('Deleting a user', function() {
 //	it ('should be able to delete a user', function() {
 //		browser.get('http://localhost:3000/#!/settings/edit');

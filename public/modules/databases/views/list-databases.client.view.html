@@ -194,7 +194,7 @@
                         <label class="control-label" for="reviews" style="padding-left:10px">Add Code Snippet</label>
                         <div class="controls">
                             <section class="codeMirrorSection" >
-                                <div ui-codemirror="cmOption1" ng-model="cmModel"></div>
+                                <textarea ui-codemirror="cmOption1" ng-model="cmModel" id="codeEntry"></textarea>
                             </section>
                             <label class="control-label" style="padding-left:10px">Mode</label>
                             <select class="mode-button  ng-valid ng-dirty" style="margin-left:10px; max-width:700px;" ng-model="mode" ng-options="m for m in modes" ng-change="modeChanged()"></select>
@@ -203,7 +203,7 @@
                     <div class="form-group">
                         <label class="control-label" for="reviews" style="padding-left:10px">Add Comment</label>
                         <div class="controls">
-                            <textarea type="text" data-ng-model="csComment" id="csComment" class="form-control" style="margin-left:10px; max-width:700px;" placeholder="Enter your comment here"></textarea>
+                            <textarea type="text" data-ng-model="csComment" class="form-control" style="margin-left:10px; max-width:700px;" placeholder="Enter your comment here"></textarea>
                         </div>   
                     </div>
                     <div class="form-group">

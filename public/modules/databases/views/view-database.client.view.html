@@ -110,10 +110,10 @@
                 <a ng-click="selectedTab = 2;" id="newCommentTab" >New Comment</a>
             </li>
             <li ng-class="{active: selectedTab == 3}">
-                <a ng-click="selectedTab = 3;">Code Snippets</a>
+                <a ng-click="selectedTab = 3;" id="codesnippet">Code Snippets</a>
             </li>
             <li ng-class="{active: selectedTab == 4}">
-                <a ng-click="selectedTab = 4;">New Code Snippet</a>
+                <a ng-click="selectedTab = 4;" id="newCodeSnippet">New Code Snippet</a>
             </li>
         </ul>
 
@@ -190,7 +190,7 @@
                         <label class="control-label" for="reviews" style="padding-left:10px">Add Code Snippet</label>
                         <div class="controls">
                             <section class="codeMirrorSection" >
-                                <div ui-codemirror="cmOption1" ng-model="cmModel"></div>
+                                <textarea ui-codemirror="cmOption1" ng-model="cmModel" id="codeEntry"></textarea>
                             </section>
                             <label class="control-label" style="padding-left:10px">Mode</label>
                             <select class="mode-button  ng-valid ng-dirty" style="margin-left:10px; max-width:700px;" ng-model="mode" ng-options="m for m in modes" ng-change="modeChanged()"></select>
