@@ -133,7 +133,7 @@ describe('Signing up', function() {
 ////////Database////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
 
-describe('Adding database to your portfolio', function(){
+/*describe('Adding database to your portfolio', function(){
 	it ('should be able to add a database', function(){
 		element(by.id('addDBButton')).click();
 		element(by.id('name')).sendKeys( generateUUID() );
@@ -155,7 +155,7 @@ describe('View gatorDB', function() {
 
 		expect(browser.getCurrentUrl()).toEqual('http://localhost:3000/#!/databases/552d85612e01ff00006eee89');
 	});
-});
+});*/
 
 
 ////////////////////////////////////////////////////////////////
@@ -171,14 +171,22 @@ describe('View gatorDB', function() {
 //	});
 //});
 //
-//describe('Creating a new codeSnippet', function() {
-// 	it ('should be able to add a codeSnippet to the db', function() {
-// 		browser.get('http://localhost:3000/#!/552d85612e01ff00006eee89');
-//
-// 		query.sendKeys('gatorDB');
-//
-// 	});
-//});
+describe('Creating a new codeSnippet', function() {
+ 	it ('should be able to add a codeSnippet to the db', function() {
+ 		browser.get('http://localhost:3000/#!/databases/5536d95f7d34610000f83d65');
+ 		browser.sleep(40000);
+ 		var tabs=element.all(by.css("ul.nav.nav-pills"));
+ 		tabs.get(3).click();
+ 		var modeSelect= element(by.model('mode'));
+ 		modeSelect.click();
+ 		element(by.options("m for m in modes")).get(1).click();
+ 		element(by.model('cmModel')).sendKeys('*This is a comment \n /*So is this*/ \n //And this \n "A string" \n `A macro\' \n return a keyword \n _by() a builtin' );
+ 		element(by.id('codeSnippetSubmit')).click();
+ 		element.all(by.css("ul.nav.nav-pills")).get(2).click();
+ 		expect(element.all(by.css(".cm-s-monokai span.cm-comment")).get(0).getText().toEqual('*This is a comment'));
+
+ 	});
+});
 
 //describe('Deleting a user', function() {
 //	it ('should be able to delete a user', function() {

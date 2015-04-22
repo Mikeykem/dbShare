@@ -45,6 +45,7 @@ module.exports = function(config) {
 		// If browser does not capture in given timeout [ms], kill it
 		captureTimeout: 60000,
 
+		logLevel: config.LOG_ERROR,
 		// Continuous Integration mode
 		// If true, it capture browsers, run tests and exit
 		singleRun: true,
