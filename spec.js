@@ -143,8 +143,6 @@ describe('Signing up', function() {
 		element(by.id('submit')).click();
 		expect($('[data-ng-show="error"]').isDisplayed()).toBeFalsy();
 	});
-
-
 });
 
 describe('View gatorDB', function() {
@@ -152,8 +150,7 @@ describe('View gatorDB', function() {
 		browser.get('http://localhost:3000/#!/databases');
         query.sendKeys('gatorDB');
 		element(by.id('gatorDB')).click();
-
-		expect(browser.getCurrentUrl()).toEqual('http://localhost:3000/#!/databases/552d85612e01ff00006eee89');
+		expect($('[data-ng-show="error"]').isDisplayed()).toBeFalsy();
 	});
 });*/
 
@@ -161,15 +158,33 @@ describe('View gatorDB', function() {
 ////////////////////////////////////////////////////////////////
 ////////Comment and Code Snippet////////////////////////////////
 ////////////////////////////////////////////////////////////////
-//
-//describe('Creating a new comment', function() {
-//	it ('should be able to add a comment to the db', function() {
-//		browser.get('http://localhost:3000/#!/552d85612e01ff00006eee89');
-//
-//		query.sendKeys('gatorDB');
-//
-//	});
-//});
+
+describe('Creating a new comment', function() {
+	it ('should be able to add a comment to the db', function() {
+		element(by.id('newCommentTab')).click();
+		element(by.id('reviews')).sendKeys( generateUUID() );
+		element(by.id('commentSubmit')).click();
+		expect($('[data-ng-show="error"]').isDisplayed()).toBeFalsy();
+	});
+});
+
+describe('Creating a new comment', function() {
+	var comment = generateUUID();
+	it ('should be able to add a comment to the db', function() {
+		element(by.id('newCommentTab')).click();
+		element(by.id('reviews')).sendKeys( comment );
+		element(by.id('commentSubmit')).click();
+
+		element(by.id('commentTab')).click();
+
+		//var comment2 = element.all(by.binding('comment.reviews'));
+		//expect(comment).toEqual(comment2);
+	});
+});
+
+
+
+
 //
 describe('Creating a new codeSnippet', function() {
  	it ('should be able to add a codeSnippet to the db', function() {
